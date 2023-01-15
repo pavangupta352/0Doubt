@@ -1,0 +1,19 @@
+{
+  "name": "0doubt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavangupta352/0Doubt.git"
+  },
+  "author": "Pavan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pavangupta352/0Doubt/issues"
+  },
+  "homepage": "https://github.com/pavangupta352/0Doubt#readme"
+}
