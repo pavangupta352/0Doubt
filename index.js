@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './App.css';
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -29,22 +30,41 @@ function App() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input name="title" placeholder="Title" />
-        <input name="company" placeholder="Company" />
-        <input name="position" placeholder="Position" />
-        <textarea name="experience" placeholder="Experience"></textarea>
+    <div className="App">
+      <form className="form" onSubmit={handleSubmit}>
+        <h1>Share Your Interview Experience</h1>
+        <label>
+          Title:
+          <input name="title" placeholder="Title" required />
+        </label>
+        <br />
+        <label>
+          Company:
+          <input name="company" placeholder="Company" required />
+        </label>
+        <br />
+        <label>
+          Position:
+          <input name="position" placeholder="Position" required />
+        </label>
+        <br />
+        <label>
+          Experience:
+          <textarea name="experience" placeholder="Experience" required></textarea>
+        </label>
+        <br />
         <button type="submit">Submit</button>
       </form>
-      {posts.map((post) => (
-        <div key={post._id}>
-          <h2>{post.title}</h2>
-          <p>Company: {post.company}</p>
-          <p>Position: {post.position}</p>
-          <p>Experience: {post.experience}</p>
-        </div>
-      ))}
+      <div className="posts">
+        {posts.map((post) => (
+          <div key={post._id} className="post">
+            <h2>{post.title}</h2>
+            <p>Company: {post.company}</p>
+            <p>Position: {post.position}</p>
+            <p>Experience: {post.experience}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
